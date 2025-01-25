@@ -1,0 +1,4 @@
+[gpt-3.5-turbo, {"number_yes": true, "numbe_no": false}, {"answers_yes": true, "answers_no": false}]
+[gpt-3.5-turbo, {"number_yes": true, "numbe_no": false}, {"answers_yes": true, "answers_no": false}]
+[gpt-3.5-turbo, {"number_yes": true, "numbe_no": false}, {"answers_yes": true, "answers_no": false}]
+[gpt-3.5-turbo, {"number_yes": true, "numbe_no": false}, {"answers_yes": true, "answers_no": false}]

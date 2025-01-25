@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Define the root directory
+root_dir="root"
+
+# Create the summaries directory if it doesn't exist
+mkdir -p "$root_dir/summaries"
+
+# Loop through the subdirectories in the root directory
+for dir in "$root_dir"/*/; do
+    # Extract the folder name
+    folder_name=$(basename "$dir")
+    
+    # Check if the summary.txt file exists
+    if [[ -f "$dir/summary.txt" ]]; then
+        # Copy the file to the summaries folder with the folder name as the new name
+        cp "$dir/summary.txt" "$root_dir/summaries/$folder_name.txt"
+    fi
+done
+
+echo "Summaries collected in $root_dir/summaries/"

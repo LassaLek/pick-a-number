@@ -1,0 +1,65 @@
+----- Trend Graph -----
+The file 'trend_graph.png' shows how PERCENT_CORRECT_2 changes as 'Critical_Step' increases,
+with a separate line for each prompting method. If lines slope downward, that suggests
+worsening performance at higher complexity levels.
+
+----- Aggregated Data (Best to Worst) -----
+Below is a sorted table of prompt methods by their average PERCENT_CORRECT_2.
+(Higher mean_percent_correct = better overall performance.)
+
+Test             Test_Description  mean_percent_correct  std_percent_correct  count  Rank
+ 3_3               Counterfactual             64.814815            10.686324      9     1
+ 2_2  Chain-of-thought (revealed)             64.518519            10.830911      9     2
+ 4_4 Chain-of-thought (self-exp.)             62.888889            10.651030      9     3
+ 5_5                    Few-shots             43.777778            30.834685      9     4
+ 0_0                        Plain             34.666667             6.806859      9     5
+ 6_6                        Money             27.407407             9.541980      9     6
+ 1_1    Chain-of-thought (silent)             18.370370             6.824068      9     7
+
+----- Kruskal-Wallis Test (Overall Comparison) -----
+H-statistic: 41.02781585789834, p-value: 2.859360387496813e-07
+=> There is a statistically significant difference among the prompt methods.
+
+
+----- Mann-Whitney U Tests (Pairwise) -----
+Comparisons between each pair of prompt methods:
+                            Test 1                             Test 2  U-Statistic  p-value
+                       0_0 - Plain    1_1 - Chain-of-thought (silent)         78.5 0.000900
+                       0_0 - Plain  2_2 - Chain-of-thought (revealed)          0.0 0.000404
+                       0_0 - Plain               3_3 - Counterfactual          1.0 0.000540
+                       0_0 - Plain 4_4 - Chain-of-thought (self-exp.)          0.0 0.000404
+                       0_0 - Plain                    5_5 - Few-shots         33.5 0.564380
+                       0_0 - Plain                        6_6 - Money         62.0 0.062187
+   1_1 - Chain-of-thought (silent)  2_2 - Chain-of-thought (revealed)          0.0 0.000404
+   1_1 - Chain-of-thought (silent)               3_3 - Counterfactual          0.0 0.000395
+   1_1 - Chain-of-thought (silent) 4_4 - Chain-of-thought (self-exp.)          0.0 0.000404
+   1_1 - Chain-of-thought (silent)                    5_5 - Few-shots         20.5 0.084284
+   1_1 - Chain-of-thought (silent)                        6_6 - Money         18.5 0.055830
+ 2_2 - Chain-of-thought (revealed)               3_3 - Counterfactual         33.5 0.563159
+ 2_2 - Chain-of-thought (revealed) 4_4 - Chain-of-thought (self-exp.)         45.0 0.722278
+ 2_2 - Chain-of-thought (revealed)                    5_5 - Few-shots         62.5 0.056729
+ 2_2 - Chain-of-thought (revealed)                        6_6 - Money         80.5 0.000471
+              3_3 - Counterfactual 4_4 - Chain-of-thought (self-exp.)         48.5 0.505374
+              3_3 - Counterfactual                    5_5 - Few-shots         60.5 0.083962
+              3_3 - Counterfactual                        6_6 - Money         80.0 0.000548
+4_4 - Chain-of-thought (self-exp.)                    5_5 - Few-shots         63.5 0.046491
+4_4 - Chain-of-thought (self-exp.)                        6_6 - Money         81.0 0.000401
+                   5_5 - Few-shots                        6_6 - Money         50.5 0.399344
+
+----- Correlation with Critical Step (Spearman) -----
+For each prompt method, we check if there's a monotonic increase/decrease
+in PERCENT_CORRECT_2 as 'Critical_Step' grows.
+
+Test_Code             Test_Description  Spearman_rho  Spearman_pvalue
+      0_0                        Plain     -0.235302         0.542216
+      1_1    Chain-of-thought (silent)     -0.084037         0.829806
+      2_2  Chain-of-thought (revealed)     -0.418414         0.262381
+      3_3               Counterfactual      0.271225         0.480225
+      4_4 Chain-of-thought (self-exp.)     -0.368204         0.329560
+      5_5                    Few-shots     -0.966421         0.000022
+      6_6                        Money     -0.607644         0.082612
+
+Interpretation:
+- Negative rho suggests performance decreases with higher Critical_Step.
+- Positive rho suggests performance improves with higher Critical_Step.
+- p-value < 0.05 implies correlation is statistically significant.

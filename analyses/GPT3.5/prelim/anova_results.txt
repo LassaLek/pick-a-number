@@ -1,0 +1,11 @@
+\begin{tabular}{lrrrr}
+\toprule
+ & sum_sq & df & F & PR(>F) \\
+\midrule
+C(Test) & 7633.722305 & 6.000000 & 2.734985 & 0.219258 \\
+C(Last_Digit) & 10000.310721 & 8.000000 & 2.687159 & 0.224495 \\
+C(Test):C(Last_Digit) & 5324.773992 & 48.000000 & 0.238468 & 0.989724 \\
+Residual & 1395.569444 & 3.000000 & NaN & NaN \\
+\bottomrule
+\end{tabular}
+

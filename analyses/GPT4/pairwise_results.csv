@@ -1,0 +1,22 @@
+Test 1,Test 2,U-Statistic,p-value
+0_0 - Plain,1_1 - Chain-of-thought (silent),5.0,0.0019234824252999986
+0_0 - Plain,2_2 - Chain-of-thought (revealed),0.0,0.000403832264974161
+0_0 - Plain,3_3 - Counterfactual,8.0,0.004569233149710307
+0_0 - Plain,4_4 - Chain-of-thought (self-exp.),0.0,0.00040103904468254847
+0_0 - Plain,5_5 - Few-shots,0.0,0.00040103904468254847
+0_0 - Plain,6_6 - Money,42.0,0.9291609777362501
+1_1 - Chain-of-thought (silent),2_2 - Chain-of-thought (revealed),17.0,0.04141156060965988
+1_1 - Chain-of-thought (silent),3_3 - Counterfactual,52.0,0.3232650140527822
+1_1 - Chain-of-thought (silent),4_4 - Chain-of-thought (self-exp.),31.5,0.4510378056395097
+1_1 - Chain-of-thought (silent),5_5 - Few-shots,9.0,0.006087432584664075
+1_1 - Chain-of-thought (silent),6_6 - Money,67.0,0.020810038319936046
+2_2 - Chain-of-thought (revealed),3_3 - Counterfactual,75.5,0.0021966773341707798
+2_2 - Chain-of-thought (revealed),4_4 - Chain-of-thought (self-exp.),58.0,0.1309110789024132
+2_2 - Chain-of-thought (revealed),5_5 - Few-shots,26.0,0.21566106849894595
+2_2 - Chain-of-thought (revealed),6_6 - Money,75.5,0.0021616995186251107
+3_3 - Counterfactual,4_4 - Chain-of-thought (self-exp.),18.0,0.05060796566470936
+3_3 - Counterfactual,5_5 - Few-shots,1.0,0.0005476641794756211
+3_3 - Counterfactual,6_6 - Money,62.0,0.06150508295154123
+4_4 - Chain-of-thought (self-exp.),5_5 - Few-shots,18.5,0.05698661120886168
+4_4 - Chain-of-thought (self-exp.),6_6 - Money,70.0,0.009934098608674235
+5_5 - Few-shots,6_6 - Money,78.0,0.0010043016582732597

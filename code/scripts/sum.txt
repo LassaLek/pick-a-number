@@ -1,0 +1,42 @@
+@echo off
+setlocal enabledelayedexpansion
+
+:: Initialize the summary file
+set "output_file=final.txt"
+echo Filename - TOTAL: XX CORRECT_1: XX CORRECT_2: XX > "%output_file%"
+
+:: Process all .txt files in the current directory
+for %%F in (*.txt) do (
+    set "file_name=%%F"
+    set "total=0"
+    set "correct_1=0"
+    set "correct_2=0"
+
+    :: Count total lines
+    for /f %%L in ('find /c /v "" ^< "%%F"') do set "total=%%L"
+
+    :: Process each line in the file
+    for /f "usebackq delims=" %%L in ("%%F") do (
+        set "line=%%L"
+
+        :: Count lines with "number_yes": true
+        echo !line! | findstr /i "\"number_yes\": true" >nul
+        if !errorlevel! equ 0 (
+            set /a correct_1+=1
+        )
+
+        :: Count lines matching full condition
+        echo !line! | findstr /i "\"number_yes\": true.*\"numbe_no\": false.*\"answers_yes\": true.*\"answers_no\": false" >nul
+        if !errorlevel! equ 0 (
+            set /a correct_2+=1
+        )
+    )
+
+    :: Write results to the output file
+    echo !file_name! - TOTAL: !total! CORRECT_1: !correct_1! CORRECT_2: !correct_2! >> "%output_file%"
+)
+
+:: Notify completion
+echo Summary written to %output_file%
+pause
+

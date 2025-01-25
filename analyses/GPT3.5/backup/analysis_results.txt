@@ -1,0 +1,45 @@
+----- Trend Graph -----
+The trend graph shows PERCENT_CORRECT_2 values by Last_Digit for each test type.
+It provides a visual comparison of how performance changes across Last_Digit.
+The graph is saved as 'trend_graph.png'.
+
+----- Aggregated Data (Best to Worst) -----
+The following table ranks tests based on their average PERCENT_CORRECT_2:
+Test  mean_percent_correct  std_percent_correct  count  Rank
+ 3_3             53.333333            17.227598     10     1
+ 5_5             46.200000            24.769655     10     2
+ 6_6             44.166667             7.288690      9     3
+ 0_0             32.148091             6.869810      9     4
+ 1_1             29.723417             8.860064      9     5
+ 4_4             26.583333            23.106737     10     6
+ 2_2             19.475452            16.925827      9     7
+
+----- Statistical Tests -----
+1. Kruskal-Wallis Test Results:
+H-statistic: 24.846262826763198, p-value: 0.0003645725233368336
+There is a significant difference between the test groups.
+
+2. Pairwise Mann-Whitney U Test Results:
+This test compares each pair of tests to identify significant differences:
+      Test 1       Test 2  U-Statistic  p-value
+       Plain CoT - silent         45.5 0.690344
+       Plain          CoT         61.5 0.068530
+       Plain      Counter          3.5 0.000789
+       Plain         Expl         64.5 0.119678
+       Plain           FS         33.0 0.346686
+       Plain        Money          8.0 0.004527
+CoT - silent          CoT         60.0 0.093059
+CoT - silent      Counter          3.0 0.000699
+CoT - silent         Expl         60.0 0.236033
+CoT - silent           FS         25.5 0.120004
+CoT - silent        Money          8.0 0.004612
+         CoT      Counter          8.5 0.003194
+         CoT         Expl         35.5 0.459863
+         CoT           FS         16.0 0.019802
+         CoT        Money         11.0 0.010168
+     Counter         Expl         80.5 0.023135
+     Counter           FS         67.0 0.211606
+     Counter        Money         64.0 0.129897
+        Expl           FS         24.0 0.053632
+        Expl        Money         22.0 0.065361
+          FS        Money         41.0 0.774473

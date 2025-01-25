@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Define the directory containing the .txt files
+input_dir="path_to_your_folder"
+
+# Define the output summary file
+output_file="final.txt"
+
+# Initialize the output file
+echo "Filename - TOTAL: XX CORRECT: XX" > "$output_file"
+
+# Loop through all .txt files in the directory
+for file in "$input_dir"/*.txt; do
+    # Count the total number of lines
+    total=$(wc -l < "$file")
+
+    # Count lines where "number_yes": true and "answers_yes": true
+    correct=$(grep -o '"number_yes": true' "$file" | wc -l)
+    correct=$(grep '"number_yes": true' "$file" | grep '"answers_yes": true' | wc -l)
+
+    # Append the result to the summary file
+    echo "$(basename "$file") - TOTAL: $total CORRECT: $correct" >> "$output_file"
+done
+
+echo "Summary written to $output_file"

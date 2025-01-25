@@ -1,0 +1,75 @@
+----- Summary Statistics -----
+       PERCENT_CORRECT_1  PERCENT_CORRECT_2
+count          66.000000          66.000000
+mean           57.604180          36.224080
+std            17.614796          19.687876
+min            28.000000           4.000000
+25%            46.000000          23.500000
+50%            51.833333          36.209713
+75%            68.333333          45.750000
+max           100.000000         100.000000
+
+----- One-Way ANOVA Results -----
+Test: 0_0, F-Statistic: nan, p-value: nan
+  Explanation: No significant effect of Last_Digit on PERCENT_CORRECT_2 for 0_0. (p >= 0.05)
+Test: 1_1, F-Statistic: nan, p-value: nan
+  Explanation: No significant effect of Last_Digit on PERCENT_CORRECT_2 for 1_1. (p >= 0.05)
+Test: 2_2, F-Statistic: nan, p-value: nan
+  Explanation: No significant effect of Last_Digit on PERCENT_CORRECT_2 for 2_2. (p >= 0.05)
+Test: 3_3, F-Statistic: nan, p-value: nan
+  Explanation: No significant effect of Last_Digit on PERCENT_CORRECT_2 for 3_3. (p >= 0.05)
+Test: 4_4, F-Statistic: nan, p-value: nan
+  Explanation: No significant effect of Last_Digit on PERCENT_CORRECT_2 for 4_4. (p >= 0.05)
+Test: 5_5, F-Statistic: nan, p-value: nan
+  Explanation: No significant effect of Last_Digit on PERCENT_CORRECT_2 for 5_5. (p >= 0.05)
+Test: 6_6, F-Statistic: nan, p-value: nan
+  Explanation: No significant effect of Last_Digit on PERCENT_CORRECT_2 for 6_6. (p >= 0.05)
+
+----- Two-Way ANOVA Table -----
+                             sum_sq    df         F    PR(>F)
+C(Test)                 7633.722305   6.0  2.734985  0.219258
+C(Last_Digit)          10000.310721   8.0  2.687159  0.224495
+C(Test):C(Last_Digit)   5324.773992  48.0  0.238468  0.989724
+Residual                1395.569444   3.0       NaN       NaN
+
+----- Test Ratings (Best to Worst) -----
+Tests ranked by mean PERCENT_CORRECT_2:
+Test
+3_3    53.333333
+5_5    46.200000
+6_6    44.166667
+0_0    32.148091
+1_1    29.723417
+4_4    26.583333
+2_2    19.475452
+
+Best Test: Counter (53.33%)
+Worst Test: CoT (19.48%)
+
+Difference Between Best and Worst: 33.86%
+The difference between the best and worst test is statistically significant (p < 0.05).
+
+
+----- Tukey HSD Test Results -----
+Group 1 Group 2  Mean Difference  p-value  Lower CI  Upper CI  Reject Null
+    0_0     1_1          -2.4247   0.9999  -26.6475   21.7982        False
+    0_0     2_2         -12.6726   0.6848  -36.8955   11.5502        False
+    0_0     3_3          21.1852   0.1066   -2.4243   44.7948        False
+    0_0     4_4          -5.5648   0.9909  -29.1743   18.0448        False
+    0_0     5_5          14.0519   0.5425   -9.5576   37.6614        False
+    0_0     6_6          12.0186   0.7351  -12.2043   36.2414        False
+    1_1     2_2         -10.2480   0.8532  -34.4708   13.9749        False
+    1_1     3_3          23.6099   0.0500    0.0004   47.2194         True
+    1_1     4_4          -3.1401   0.9996  -26.7496   20.4694        False
+    1_1     5_5          16.4766   0.3491   -7.1329   40.0861        False
+    1_1     6_6          14.4432   0.5403   -9.7796   38.6661        False
+    2_2     3_3          33.8579   0.0009   10.2484   57.4674         True
+    2_2     4_4           7.1079   0.9681  -16.5016   30.7174        False
+    2_2     5_5          26.7245   0.0168    3.1150   50.3341         True
+    2_2     6_6          24.6912   0.0429    0.4684   48.9141         True
+    3_3     4_4         -26.7500   0.0126  -49.7298   -3.7702         True
+    3_3     5_5          -7.1333   0.9629  -30.1131   15.8465        False
+    3_3     6_6          -9.1667   0.8970  -32.7762   14.4428        False
+    4_4     5_5          19.6167   0.1430   -3.3631   42.5965        False
+    4_4     6_6          17.5833   0.2742   -6.0262   41.1928        False
+    5_5     6_6          -2.0333   1.0000  -25.6428   21.5762        False

@@ -1,0 +1,61 @@
+=== PROMPT-BASED ANALYSIS (All Models) ===
+
+            Test_Description  mean_correct  std_correct  count  Rank
+              Counterfactual     45.497230    20.568928     38     1
+ Chain-of-thought (revealed)     40.174011    23.261039     38     2
+                   Few-shots     38.689013    21.887133     38     3
+Chain-of-thought (self-exp.)     36.624250    22.448541     38     4
+   Chain-of-thought (silent)     33.153792    21.498207     38     5
+                       Money     32.872807    18.447329     38     6
+                       Plain     27.911314    15.041198     38     7
+
+Kruskal-Wallis Test (Prompts):
+  H-statistic = 16.928153918282245
+  p-value     = 0.009550947839511624
+  => Significant differences among prompt types.
+
+Pairwise Mann-Whitney (Prompts):
+                     Prompt1                      Prompt2     U     pval
+                       Plain    Chain-of-thought (silent) 682.0 0.681449
+                       Plain  Chain-of-thought (revealed) 488.0 0.015236
+                       Plain               Counterfactual 348.0 0.000104
+                       Plain Chain-of-thought (self-exp.) 592.0 0.178344
+                       Plain                    Few-shots 506.0 0.025124
+                       Plain                        Money 598.5 0.201023
+   Chain-of-thought (silent)  Chain-of-thought (revealed) 583.5 0.151512
+   Chain-of-thought (silent)               Counterfactual 470.5 0.009083
+   Chain-of-thought (silent) Chain-of-thought (self-exp.) 672.5 0.610551
+   Chain-of-thought (silent)                    Few-shots 576.5 0.131839
+   Chain-of-thought (silent)                        Money 660.0 0.522606
+ Chain-of-thought (revealed)               Counterfactual 626.0 0.320844
+ Chain-of-thought (revealed) Chain-of-thought (self-exp.) 777.5 0.567480
+ Chain-of-thought (revealed)                    Few-shots 772.5 0.603313
+ Chain-of-thought (revealed)                        Money 868.0 0.130315
+              Counterfactual Chain-of-thought (self-exp.) 880.5 0.100532
+              Counterfactual                    Few-shots 890.5 0.080785
+              Counterfactual                        Money 982.0 0.006979
+Chain-of-thought (self-exp.)                    Few-shots 681.5 0.677595
+Chain-of-thought (self-exp.)                        Money 773.0 0.599491
+                   Few-shots                        Money 804.5 0.393970
+
+=== MODEL-BASED ANALYSIS (All Prompts) ===
+
+Model_Description  mean_correct  std_correct  count  Rank
+           GPT 4o     48.956044    18.334080     63     1
+      GPT 4o-mini     45.206349    22.654284     63     2
+          GPT 3.5     31.506954    16.527635     77     3
+            GPT 4     21.091836    14.345868     63     4
+
+Kruskal-Wallis Test (Models):
+  H-statistic = 71.69170443658899
+  p-value     = 1.853337722698004e-15
+  => Significant differences among models.
+
+Pairwise Mann-Whitney (Models):
+     Model1      Model2      U         pval
+    GPT 3.5       GPT 4 3333.0 1.444473e-04
+    GPT 3.5 GPT 4o-mini 1604.0 5.822603e-04
+    GPT 3.5      GPT 4o 1190.5 2.286284e-07
+      GPT 4 GPT 4o-mini  752.5 1.837864e-09
+      GPT 4      GPT 4o  458.5 9.390547e-14
+GPT 4o-mini      GPT 4o 1785.5 3.323491e-01
